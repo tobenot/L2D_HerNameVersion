@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\thirdParty\glew\src\glew.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\thirdParty\glew\include\GL\wglew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\thirdParty\glew\include\GL\glew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\thirdParty\glew\include\GL\glxew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\thirdParty\glew\build\glew.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7A7A4C5F-03F4-3273-BCC8-9766515B693B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1B7310F8-D944-3EA4-8CE4-CEB3A7374A0F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

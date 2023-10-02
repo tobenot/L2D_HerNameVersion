@@ -1,0 +1,400 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: /DWIN32;/D_WINDOWS
+      Id flags:  
+      
+      The output was:
+      0
+      用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.11.2+f32259642
+      版权所有(C) Microsoft Corporation。保留所有权利。
+      
+      生成启动时间为 2023/10/2 10:56:42。
+      节点 1 上的项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\3.27.6\\CompilerIdC\\CompilerIdC.vcxproj”(默认目标)。
+      PrepareForBuild:
+        正在创建目录“Debug\\”。
+        正在创建目录“Debug\\CompilerIdC.tlog\\”。
+      InitializeBuildStatus:
+        正在创建“Debug\\CompilerIdC.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+      ClCompile:
+        D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\3.27.6\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        正在删除文件“Debug\\CompilerIdC.tlog\\unsuccessfulbuild”。
+        正在对“Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate”执行 Touch 任务。
+      已完成生成项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\3.27.6\\CompilerIdC\\CompilerIdC.vcxproj”(默认目标)的操作。
+      
+      已成功生成。
+          0 个警告
+          0 个错误
+      
+      已用时间 00:00:01.64
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/3.27.6/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: /DWIN32;/D_WINDOWS;/GR;/EHsc
+      Id flags:  
+      
+      The output was:
+      0
+      用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.11.2+f32259642
+      版权所有(C) Microsoft Corporation。保留所有权利。
+      
+      生成启动时间为 2023/10/2 10:56:44。
+      节点 1 上的项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\3.27.6\\CompilerIdCXX\\CompilerIdCXX.vcxproj”(默认目标)。
+      PrepareForBuild:
+        正在创建目录“Debug\\”。
+        正在创建目录“Debug\\CompilerIdCXX.tlog\\”。
+      InitializeBuildStatus:
+        正在创建“Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+      ClCompile:
+        D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\3.27.6\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        正在删除文件“Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild”。
+        正在对“Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate”执行 Touch 任务。
+      已完成生成项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\3.27.6\\CompilerIdCXX\\CompilerIdCXX.vcxproj”(默认目标)的操作。
+      
+      已成功生成。
+          0 个警告
+          0 个错误
+      
+      已用时间 00:00:01.06
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/3.27.6/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-g35wcg"
+      binary: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-g35wcg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-g35wcg'
+        
+        Run Build Command(s): D:/VS/IDE/MSBuild/Current/Bin/MSBuild.exe cmTC_0873e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.11.2+f32259642
+        版权所有(C) Microsoft Corporation。保留所有权利。
+        
+        生成启动时间为 2023/10/2 10:56:45。
+        节点 1 上的项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-g35wcg\\cmTC_0873e.vcxproj”(默认目标)。
+        PrepareForBuild:
+          正在创建目录“cmTC_0873e.dir\\Debug\\”。
+          正在创建目录“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-g35wcg\\Debug\\”。
+          正在创建目录“cmTC_0873e.dir\\Debug\\cmTC_0873e.tlog\\”。
+        InitializeBuildStatus:
+          正在创建“cmTC_0873e.dir\\Debug\\cmTC_0873e.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+        ClCompile:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0873e.dir\\Debug\\\\" /Fd"cmTC_0873e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.29.30141 版
+          版权所有(C) Microsoft Corporation。保留所有权利。
+          CMakeCCompilerABI.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0873e.dir\\Debug\\\\" /Fd"cmTC_0873e.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-g35wcg\\Debug\\cmTC_0873e.exe" /INCREMENTAL /ILK:"cmTC_0873e.dir\\Debug\\cmTC_0873e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-g35wcg/Debug/cmTC_0873e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-g35wcg/Debug/cmTC_0873e.lib" /MACHINE:X64  /machine:x64 cmTC_0873e.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_0873e.vcxproj -> F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-g35wcg\\Debug\\cmTC_0873e.exe
+        FinalizeBuildStatus:
+          正在删除文件“cmTC_0873e.dir\\Debug\\cmTC_0873e.tlog\\unsuccessfulbuild”。
+          正在对“cmTC_0873e.dir\\Debug\\cmTC_0873e.tlog\\cmTC_0873e.lastbuildstate”执行 Touch 任务。
+        已完成生成项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-g35wcg\\cmTC_0873e.vcxproj”(默认目标)的操作。
+        
+        已成功生成。
+            0 个警告
+            0 个错误
+        
+        已用时间 00:00:00.94
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-mxjsi3"
+      binary: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-mxjsi3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-mxjsi3'
+        
+        Run Build Command(s): D:/VS/IDE/MSBuild/Current/Bin/MSBuild.exe cmTC_e5466.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.11.2+f32259642
+        版权所有(C) Microsoft Corporation。保留所有权利。
+        
+        生成启动时间为 2023/10/2 10:56:46。
+        节点 1 上的项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-mxjsi3\\cmTC_e5466.vcxproj”(默认目标)。
+        PrepareForBuild:
+          正在创建目录“cmTC_e5466.dir\\Debug\\”。
+          正在创建目录“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-mxjsi3\\Debug\\”。
+          正在创建目录“cmTC_e5466.dir\\Debug\\cmTC_e5466.tlog\\”。
+        InitializeBuildStatus:
+          正在创建“cmTC_e5466.dir\\Debug\\cmTC_e5466.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+        ClCompile:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e5466.dir\\Debug\\\\" /Fd"cmTC_e5466.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.29.30141 版
+          版权所有(C) Microsoft Corporation。保留所有权利。
+          CMakeCXXCompilerABI.cpp
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e5466.dir\\Debug\\\\" /Fd"cmTC_e5466.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-mxjsi3\\Debug\\cmTC_e5466.exe" /INCREMENTAL /ILK:"cmTC_e5466.dir\\Debug\\cmTC_e5466.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-mxjsi3/Debug/cmTC_e5466.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-mxjsi3/Debug/cmTC_e5466.lib" /MACHINE:X64  /machine:x64 cmTC_e5466.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_e5466.vcxproj -> F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-mxjsi3\\Debug\\cmTC_e5466.exe
+        FinalizeBuildStatus:
+          正在删除文件“cmTC_e5466.dir\\Debug\\cmTC_e5466.tlog\\unsuccessfulbuild”。
+          正在对“cmTC_e5466.dir\\Debug\\cmTC_e5466.tlog\\cmTC_e5466.lastbuildstate”执行 Touch 任务。
+        已完成生成项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-mxjsi3\\cmTC_e5466.vcxproj”(默认目标)的操作。
+        
+        已成功生成。
+            0 个警告
+            0 个错误
+        
+        已用时间 00:00:00.92
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/thirdParty/glfw/CMakeLists.txt:62 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-qkjc4n"
+      binary: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-qkjc4n"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/thirdParty/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-qkjc4n'
+        
+        Run Build Command(s): D:/VS/IDE/MSBuild/Current/Bin/MSBuild.exe cmTC_1e8fe.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.11.2+f32259642
+        版权所有(C) Microsoft Corporation。保留所有权利。
+        
+        生成启动时间为 2023/10/2 10:56:48。
+        节点 1 上的项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\cmTC_1e8fe.vcxproj”(默认目标)。
+        PrepareForBuild:
+          正在创建目录“cmTC_1e8fe.dir\\Debug\\”。
+          正在创建目录“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\Debug\\”。
+          正在创建目录“cmTC_1e8fe.dir\\Debug\\cmTC_1e8fe.tlog\\”。
+        InitializeBuildStatus:
+          正在创建“cmTC_1e8fe.dir\\Debug\\cmTC_1e8fe.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+        ClCompile:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e8fe.dir\\Debug\\\\" /Fd"cmTC_1e8fe.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\src.c"
+          用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.29.30141 版
+          版权所有(C) Microsoft Corporation。保留所有权利。
+          src.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e8fe.dir\\Debug\\\\" /Fd"cmTC_1e8fe.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\src.c"
+        F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\src.c(1,10): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\cmTC_1e8fe.vcxproj]
+        已完成生成项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\cmTC_1e8fe.vcxproj”(默认目标)的操作 - 失败。
+        
+        生成失败。
+        
+        “F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\cmTC_1e8fe.vcxproj”(默认目标) (1) ->
+        (ClCompile 目标) -> 
+          F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\src.c(1,10): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory [F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-qkjc4n\\cmTC_1e8fe.vcxproj]
+        
+            0 个警告
+            1 个错误
+        
+        已用时间 00:00:00.58
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/thirdParty/glfw/CMakeLists.txt:62 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-jgelnc"
+      binary: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-jgelnc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/thirdParty/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-jgelnc'
+        
+        Run Build Command(s): D:/VS/IDE/MSBuild/Current/Bin/MSBuild.exe cmTC_6678d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.11.2+f32259642
+        版权所有(C) Microsoft Corporation。保留所有权利。
+        
+        生成启动时间为 2023/10/2 10:56:48。
+        节点 1 上的项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\cmTC_6678d.vcxproj”(默认目标)。
+        PrepareForBuild:
+          正在创建目录“cmTC_6678d.dir\\Debug\\”。
+          正在创建目录“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\Debug\\”。
+          正在创建目录“cmTC_6678d.dir\\Debug\\cmTC_6678d.tlog\\”。
+        InitializeBuildStatus:
+          正在创建“cmTC_6678d.dir\\Debug\\cmTC_6678d.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+        ClCompile:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6678d.dir\\Debug\\\\" /Fd"cmTC_6678d.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\CheckFunctionExists.c"
+          用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.29.30141 版
+          版权所有(C) Microsoft Corporation。保留所有权利。
+          CheckFunctionExists.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6678d.dir\\Debug\\\\" /Fd"cmTC_6678d.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\CheckFunctionExists.c"
+        Link:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\Debug\\cmTC_6678d.exe" /INCREMENTAL /ILK:"cmTC_6678d.dir\\Debug\\cmTC_6678d.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-jgelnc/Debug/cmTC_6678d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-jgelnc/Debug/cmTC_6678d.lib" /MACHINE:X64  /machine:x64 cmTC_6678d.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 无法打开文件“pthreads.lib” [F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\cmTC_6678d.vcxproj]
+        已完成生成项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\cmTC_6678d.vcxproj”(默认目标)的操作 - 失败。
+        
+        生成失败。
+        
+        “F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\cmTC_6678d.vcxproj”(默认目标) (1) ->
+        (Link 目标) -> 
+          LINK : fatal error LNK1104: 无法打开文件“pthreads.lib” [F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-jgelnc\\cmTC_6678d.vcxproj]
+        
+            0 个警告
+            1 个错误
+        
+        已用时间 00:00:00.76
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.27/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/thirdParty/glfw/CMakeLists.txt:62 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-je0r7h"
+      binary: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-je0r7h"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/thirdParty/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-je0r7h'
+        
+        Run Build Command(s): D:/VS/IDE/MSBuild/Current/Bin/MSBuild.exe cmTC_88249.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        用于 .NET Framework 的 Microsoft (R) 生成引擎版本 16.11.2+f32259642
+        版权所有(C) Microsoft Corporation。保留所有权利。
+        
+        生成启动时间为 2023/10/2 10:56:50。
+        节点 1 上的项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\cmTC_88249.vcxproj”(默认目标)。
+        PrepareForBuild:
+          正在创建目录“cmTC_88249.dir\\Debug\\”。
+          正在创建目录“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\Debug\\”。
+          正在创建目录“cmTC_88249.dir\\Debug\\cmTC_88249.tlog\\”。
+        InitializeBuildStatus:
+          正在创建“cmTC_88249.dir\\Debug\\cmTC_88249.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+        ClCompile:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_88249.dir\\Debug\\\\" /Fd"cmTC_88249.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\CheckFunctionExists.c"
+          用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.29.30141 版
+          版权所有(C) Microsoft Corporation。保留所有权利。
+          CheckFunctionExists.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_88249.dir\\Debug\\\\" /Fd"cmTC_88249.dir\\Debug\\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue "F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\CheckFunctionExists.c"
+        Link:
+          D:\\VS\\IDE\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\Debug\\cmTC_88249.exe" /INCREMENTAL /ILK:"cmTC_88249.dir\\Debug\\cmTC_88249.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-je0r7h/Debug/cmTC_88249.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/CMakeFiles/CMakeScratch/TryCompile-je0r7h/Debug/cmTC_88249.lib" /MACHINE:X64  /machine:x64 cmTC_88249.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 无法打开文件“pthread.lib” [F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\cmTC_88249.vcxproj]
+        已完成生成项目“F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\cmTC_88249.vcxproj”(默认目标)的操作 - 失败。
+        
+        生成失败。
+        
+        “F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\cmTC_88249.vcxproj”(默认目标) (1) ->
+        (Link 目标) -> 
+          LINK : fatal error LNK1104: 无法打开文件“pthread.lib” [F:\\HerName\\l2d\\CubismSdkForNative-4-r.7\\CubismSdkForNative-4-r.7\\Samples\\OpenGL\\Demo\\proj.win.cmake\\build\\proj_msvc2019_x64_mt\\CMakeFiles\\CMakeScratch\\TryCompile-je0r7h\\cmTC_88249.vcxproj]
+        
+            0 个警告
+            1 个错误
+        
+        已用时间 00:00:00.79
+        
+      exitCode: 1
+...

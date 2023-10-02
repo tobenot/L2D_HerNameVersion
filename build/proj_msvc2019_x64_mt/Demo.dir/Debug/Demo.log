@@ -1,0 +1,14 @@
+﻿  dllmain.cpp
+  LAppAllocator.cpp
+  LAppDefine.cpp
+  LAppDelegate.cpp
+  LAppWavFileHandler.cpp
+  LAppLive2DManager.cpp
+  LAppModel.cpp
+  LAppPal.cpp
+  LAppSprite.cpp
+  LAppTextureManager.cpp
+  LAppView.cpp
+  main.cpp
+  TouchManager.cpp
+  Demo.vcxproj -> F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\build\proj_msvc2019_x64_mt\bin\Demo\Debug\Demo.dll
