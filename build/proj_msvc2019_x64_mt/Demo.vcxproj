@@ -177,7 +177,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\dllmain.cpp" />
+    <ClCompile Include="..\..\src\l2d_jni_wrapper.cpp" />
     <ClCompile Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\src\LAppAllocator.cpp" />
+    <ClInclude Include="..\..\src\l2d_l2dTestMain.h" />
     <ClInclude Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\src\LAppAllocator.hpp" />
     <ClCompile Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\src\LAppDefine.cpp" />
     <ClInclude Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\src\LAppDefine.hpp" />

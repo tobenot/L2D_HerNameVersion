@@ -37,6 +37,12 @@
     <ClCompile Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\src\TouchManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\l2d_jni_wrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\src\LAppAllocator.hpp">
@@ -70,6 +76,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\src\TouchManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\l2d_l2dTestMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

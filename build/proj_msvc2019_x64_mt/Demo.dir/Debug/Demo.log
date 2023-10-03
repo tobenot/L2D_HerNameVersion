@@ -1,4 +1,5 @@
 ﻿  dllmain.cpp
+  l2d_jni_wrapper.cpp
   LAppAllocator.cpp
   LAppDefine.cpp
   LAppDelegate.cpp
@@ -11,4 +12,5 @@
   LAppView.cpp
   main.cpp
   TouchManager.cpp
+    正在创建库 F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/Debug/Demo.lib 和对象 F:/HerName/l2d/CubismSdkForNative-4-r.7/CubismSdkForNative-4-r.7/Samples/OpenGL/Demo/proj.win.cmake/build/proj_msvc2019_x64_mt/Debug/Demo.exp
   Demo.vcxproj -> F:\HerName\l2d\CubismSdkForNative-4-r.7\CubismSdkForNative-4-r.7\Samples\OpenGL\Demo\proj.win.cmake\build\proj_msvc2019_x64_mt\bin\Demo\Debug\Demo.dll
