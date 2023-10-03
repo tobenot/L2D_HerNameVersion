@@ -19,145 +19,154 @@ class LAppSprite;
 class LAppModel;
 
 /**
-* @brief 描画クラス
+* @brief 绘制类
+* 
+* 
+这是一个名为LAppView的绘制类，它负责处理模型的绘制、触摸事件以及渲染目标的切换等。
+
+类中的枚举类型SelectTarget定义了渲染的目标，包括默认的帧缓冲、LAppModel各自持有的帧缓冲和LAppView持有的帧缓冲。
+
+类中的成员函数包括初始化、绘制、处理触摸事件、坐标转换、在绘制模型之前和之后调用的函数、获取精灵的透明度、切换渲染目标以及设置非默认渲染目标的背景清除颜色等。
+
+类中的成员变量包括触摸管理器、设备到屏幕的矩阵、view矩阵、着色器ID、背景图片、齿轮图片、电源图片、根据模式绘制的纹理、渲染目标的选择以及渲染目标的清除颜色等。
 */
 class LAppView
 {
 public:
 
     /**
-     * @brief LAppModelのレンダリング先
+     * @brief LAppModel的渲染目标
      */
     enum SelectTarget
     {
-        SelectTarget_None,                ///< デフォルトのフレームバッファにレンダリング
-        SelectTarget_ModelFrameBuffer,    ///< LAppModelが各自持つフレームバッファにレンダリング
-        SelectTarget_ViewFrameBuffer,     ///< LAppViewの持つフレームバッファにレンダリング
+        SelectTarget_None,                ///< 渲染到默认的帧缓冲
+        SelectTarget_ModelFrameBuffer,    ///< 渲染到LAppModel各自持有的帧缓冲
+        SelectTarget_ViewFrameBuffer,     ///< 渲染到LAppView持有的帧缓冲
     };
 
     /**
-    * @brief コンストラクタ
+    * @brief 构造函数
     */
     LAppView();
 
     /**
-    * @brief デストラクタ
+    * @brief 析构函数
     */
     ~LAppView();
 
     /**
-    * @brief 初期化する。
+    * @brief 初始化。
     */
     void Initialize();
 
     /**
-    * @brief 描画する。
+    * @brief 进行绘制。
     */
     void Render();
 
     /**
-    * @brief 画像の初期化を行う。
+    * @brief 对图像进行初始化。
     */
     void InitializeSprite();
 
     /**
-    * @brief スプライト系のサイズ再設定
+    * @brief 重新设置精灵系的大小
     */
     void ResizeSprite();
 
     /**
-    * @brief タッチされたときに呼ばれる。
+    * @brief 当触摸时调用。
     *
-    * @param[in]       pointX            スクリーンX座標
-    * @param[in]       pointY            スクリーンY座標
+    * @param[in]       pointX            屏幕X坐标
+    * @param[in]       pointY            屏幕Y坐标
     */
     void OnTouchesBegan(float pointX, float pointY) const;
 
     /**
-    * @brief タッチしているときにポインタが動いたら呼ばれる。
+    * @brief 当触摸时指针移动时调用。
     *
-    * @param[in]       pointX            スクリーンX座標
-    * @param[in]       pointY            スクリーンY座標
+    * @param[in]       pointX            屏幕X坐标
+    * @param[in]       pointY            屏幕Y坐标
     */
     void OnTouchesMoved(float pointX, float pointY) const;
 
     /**
-    * @brief タッチが終了したら呼ばれる。
+    * @brief 当触摸结束时调用。
     *
-    * @param[in]       pointX            スクリーンX座標
-    * @param[in]       pointY            スクリーンY座標
+    * @param[in]       pointX            屏幕X坐标
+    * @param[in]       pointY            屏幕Y坐标
     */
     void OnTouchesEnded(float pointX, float pointY) const;
 
     /**
-    * @brief X座標をView座標に変換する。
+    * @brief 将X坐标转换为View坐标。
     *
-    * @param[in]       deviceX            デバイスX座標
+    * @param[in]       deviceX            设备X坐标
     */
     float TransformViewX(float deviceX) const;
 
     /**
-    * @brief Y座標をView座標に変換する。
+    * @brief 将Y坐标转换为View坐标。
     *
-    * @param[in]       deviceY            デバイスY座標
+    * @param[in]       deviceY            设备Y坐标
     */
     float TransformViewY(float deviceY) const;
 
     /**
-    * @brief X座標をScreen座標に変換する。
+    * @brief 将X坐标转换为屏幕坐标。
     *
-    * @param[in]       deviceX            デバイスX座標
+    * @param[in]       deviceX            设备X坐标
     */
     float TransformScreenX(float deviceX) const;
 
     /**
-    * @brief Y座標をScreen座標に変換する。
+    * @brief 将Y坐标转换为屏幕坐标。
     *
-    * @param[in]       deviceY            デバイスY座標
+    * @param[in]       deviceY            设备Y坐标
     */
     float TransformScreenY(float deviceY) const;
 
     /**
-     * @brief   モデル1体を描画する直前にコールされる
+     * @brief   在绘制一个模型之前调用
      */
     void PreModelDraw(LAppModel& refModel);
 
     /**
-     * @brief   モデル1体を描画した直後にコールされる
+     * @brief   在绘制一个模型之后调用
      */
     void PostModelDraw(LAppModel& refModel);
 
     /**
-     * @brief   別レンダリングターゲットにモデルを描画するサンプルで
-     *           描画時のαを決定する
+     * @brief   在将模型绘制到另一个渲染目标的示例中
+     *           确定绘制时的α值
      */
     float GetSpriteAlpha(int assign) const;
 
     /**
-     * @brief レンダリング先を切り替える
+     * @brief 切换渲染目标
      */
     void SwitchRenderingTarget(SelectTarget targetType);
 
     /**
-     * @brief レンダリング先をデフォルト以外に切り替えた際の背景クリア色設定
-     * @param[in]   r   赤(0.0~1.0)
-     * @param[in]   g   緑(0.0~1.0)
-     * @param[in]   b   青(0.0~1.0)
+     * @brief 设置渲染到非默认目标时的背景清除颜色
+     * @param[in]   r   红色(0.0~1.0)
+     * @param[in]   g   绿色(0.0~1.0)
+     * @param[in]   b   蓝色(0.0~1.0)
      */
     void SetRenderTargetClearColor(float r, float g, float b);
 
 private:
-    TouchManager* _touchManager;                 ///< タッチマネージャー
-    Csm::CubismMatrix44* _deviceToScreen;    ///< デバイスからスクリーンへの行列
+    TouchManager* _touchManager;                 ///< 触摸管理器
+    Csm::CubismMatrix44* _deviceToScreen;    ///< 设备到屏幕的矩阵
     Csm::CubismViewMatrix* _viewMatrix;      ///< viewMatrix
-    GLuint _programId;                       ///< シェーダID
-    LAppSprite* _back;                       ///< 背景画像
-    LAppSprite* _gear;                       ///< ギア画像
-    LAppSprite* _power;                      ///< 電源画像
+    GLuint _programId;                       ///< 着色器ID
+    LAppSprite* _back;                       ///< 背景图片
+    LAppSprite* _gear;                       ///< 齿轮图片
+    LAppSprite* _power;                      ///< 电源图片
 
-    // レンダリング先を別ターゲットにする方式の場合に使用
-    LAppSprite* _renderSprite;                                      ///< モードによっては_renderBufferのテクスチャを描画
-    Csm::Rendering::CubismOffscreenFrame_OpenGLES2 _renderBuffer;   ///< モードによってはCubismモデル結果をこっちにレンダリング
-    SelectTarget _renderTarget;     ///< レンダリング先の選択肢
-    float _clearColor[4];           ///< レンダリングターゲットのクリアカラー
+    // 使用另一个渲染目标的方式时使用
+    LAppSprite* _renderSprite;                                      ///< 根据模式绘制_renderBuffer的纹理
+    Csm::Rendering::CubismOffscreenFrame_OpenGLES2 _renderBuffer;   ///< 根据模式将Cubism模型结果渲染到这里
+    SelectTarget _renderTarget;     ///< 渲染目标的选择
+    float _clearColor[4];           ///< 渲染目标的清除颜色
 };

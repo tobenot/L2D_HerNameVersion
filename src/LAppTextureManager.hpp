@@ -12,47 +12,69 @@
 #include <GLFW/glfw3.h>
 #include <Type/csmVector.hpp>
 
-/**
-* @brief テクスチャ管理クラス
-*
-* 画像読み込み、管理を行うクラス。
-*/
+ /**
+ * @brief 纹理管理类
+ *
+ * 图像读取、管理类。
+ * 
+ 这段代码定义了一个名为LAppTextureManager的纹理管理类。这个类主要负责图像的读取和管理。以下是代码的详细解释：
+
+struct TextureInfo：定义了一个包含纹理ID、宽度、高度和文件名的图像信息结构体。
+
+LAppTextureManager()：类的构造函数。
+
+~LAppTextureManager()：类的析构函数。
+
+Premultiply()：预乘处理函数，用于处理图像的Red、Green、Blue和Alpha值，返回预乘处理后的颜色值。
+
+CreateTextureFromPngFile()：从PNG文件创建纹理，传入文件路径名，返回图像信息结构体。如果读取失败，返回NULL。
+
+ReleaseTextures()：释放数组中的所有图像。
+
+ReleaseTexture(Csm::csmUint32 textureId)：释放指定纹理ID的图像。
+
+ReleaseTexture(std::string fileName)：释放指定名称的图像。
+
+GetTextureInfoById(GLuint textureId) const：根据纹理ID获取纹理信息。如果纹理存在，则返回TextureInfo结构体。
+
+_textures：私有成员变量，用于存储纹理信息结构体的数组
+ */
 class LAppTextureManager
 {
 public:
 
     /**
-    * @brief 画像情報構造体
+    * @brief 图像信息结构体
     */
     struct TextureInfo
     {
-        GLuint id;              ///< テクスチャID
-        int width;              ///< 横幅
-        int height;             ///< 高さ
-        std::string fileName;   ///< ファイル名
+        GLuint id;              ///< 纹理ID
+        int width;              ///< 宽度
+        int height;             ///< 高度
+        std::string fileName;   ///< 文件名
     };
 
     /**
-    * @brief コンストラクタ
+    * @brief 构造函数
     */
     LAppTextureManager();
 
     /**
-    * @brief デストラクタ
+    * @brief 析构函数
     *
     */
     ~LAppTextureManager();
 
 
     /**
-    * @brief プリマルチプライ処理
+    * @brief 预乘处理
     *
-    * @param[in] red  画像のRed値
-    * @param[in] green  画像のGreen値
-    * @param[in] blue  画像のBlue値
-    * @param[in] alpha  画像のAlpha値
+    * @param[in] red  图像的Red值
+    * @param[in] green  图像的Green值
+    * @param[in] blue  图像的Blue值
+    * @param[in] alpha  图像的Alpha值
     *
-    * @return プリマルチプライ処理後のカラー値
+    * @return 预乘处理后的颜色值
     */
     inline unsigned int Premultiply(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha)
     {
@@ -65,41 +87,41 @@ public:
     }
 
     /**
-    * @brief 画像読み込み
+    * @brief 读取图像
     *
-    * @param[in] fileName  読み込む画像ファイルパス名
-    * @return 画像情報。読み込み失敗時はNULLを返す
+    * @param[in] fileName  读取的图像文件路径名
+    * @return 图像信息。读取失败时返回NULL
     */
     TextureInfo* CreateTextureFromPngFile(std::string fileName);
 
     /**
-    * @brief 画像の解放
+    * @brief 释放图像
     *
-    * 配列に存在する画像全てを解放する
+    * 释放数组中的所有图像
     */
     void ReleaseTextures();
 
     /**
-     * @brief 画像の解放
+     * @brief 释放图像
      *
-     * 指定したテクスチャIDの画像を解放する
-     * @param[in] textureId  解放するテクスチャID
+     * 释放指定纹理ID的图像
+     * @param[in] textureId  要释放的纹理ID
      **/
     void ReleaseTexture(Csm::csmUint32 textureId);
 
     /**
-    * @brief 画像の解放
+    * @brief 释放图像
     *
-    * 指定した名前の画像を解放する
-    * @param[in] fileName  解放する画像ファイルパス名
+    * 释放指定名称的图像
+    * @param[in] fileName  要释放的图像文件路径名
     **/
     void ReleaseTexture(std::string fileName);
 
     /**
-     * @brief テクスチャIDからテクスチャ情報を得る
+     * @brief 根据纹理ID获取纹理信息
      *
-     * @param   textureId[in]       取得したいテクスチャID
-     * @return  テクスチャが存在していればTextureInfoが返る
+     * @param   textureId[in]       要获取的纹理ID
+     * @return  如果纹理存在，则返回TextureInfo
      */
     TextureInfo* GetTextureInfoById(GLuint textureId) const;
 

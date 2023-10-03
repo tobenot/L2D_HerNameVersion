@@ -15,127 +15,158 @@ class LAppView;
 class LAppTextureManager;
 
 /**
-* @brief   アプリケーションクラス。
-*   Cubism SDK の管理を行う。
+* @brief   应用程序类。
+*   管理Cubism SDK。
+* 
+这段代码定义了一个名为`LAppDelegate`的类，它负责管理Cubism SDK及应用程序的生命周期。这个类是一个单例类，意味着在整个应用程序中只有一个实例。类中包含了一些公共方法，如初始化、释放、运行、处理鼠标回调等，以及一些私有方法，如初始化Cubism SDK、检查着色器等。
+
+此外，还定义了一个名为`EventHandler`的类，它包含了两个静态方法，用于处理鼠标事件的回调。
+
+以下是`LAppDelegate`类的主要功能：
+
+1. `GetInstance()` 和 `ReleaseInstance()` 方法分别用于获取和释放这个类的单例实例。
+2. `Initialize()` 方法用于初始化应用程序所需的内容，如创建窗口、初始化Cubism SDK等。
+3. `Release()` 方法用于释放资源。
+4. `Run()` 方法用于执行应用程序的主循环。
+5. `OnMouseCallBack()` 方法用于处理鼠标事件回调，如点击和光标移动。
+6. `CreateShader()` 方法用于创建和注册着色器。
+7. 一些 getter 方法用于获取窗口信息、视图信息、纹理管理器等。
+
+`EventHandler` 类包含了两个静态方法，分别对应于 glfw 的鼠标事件回调函数。这些方法将回调的处理委托给 `LAppDelegate` 类的实例。
 */
 class LAppDelegate
 {
 public:
     /**
-    * @brief   クラスのインスタンス（シングルトン）を返す。<br>
-    *           インスタンスが生成されていない場合は内部でインスタンを生成する。
+    * @brief   返回类的实例（单例）。<br>
+    *           如果实例尚未生成，则在内部生成实例。
     *
-    * @return  クラスのインスタンス
+    * @return  类的实例
     */
     static LAppDelegate* GetInstance();
 
     /**
-    * @brief   クラスのインスタンス（シングルトン）を解放する。
+    * @brief   释放类的实例（单例）。
     *
     */
     static void ReleaseInstance();
 
     /**
-    * @brief   APPに必要なものを初期化する。
+    * @brief   初始化APP所需的内容。
     */
     bool Initialize();
 
     /**
-    * @brief   解放する。
+    * @brief   释放。
     */
     void Release();
 
     /**
-    * @brief   実行処理。
+    * @brief   执行处理。
     */
     void Run();
 
     /**
-    * @brief   OpenGL用 glfwSetMouseButtonCallback用関数。
+    * @brief   用于OpenGL的glfwSetMouseButtonCallback函数。
     *
-    * @param[in]       window            コールバックを呼んだWindow情報
-    * @param[in]       button            ボタン種類
-    * @param[in]       action            実行結果
+    * @param[in]       window            调用回调的窗口信息
+    * @param[in]       button            按钮类型
+    * @param[in]       action            执行结果
     * @param[in]       modify
     */
     void OnMouseCallBack(GLFWwindow* window, int button, int action, int modify);
 
     /**
-    * @brief   OpenGL用 glfwSetCursorPosCallback用関数。
+    * @brief   用于OpenGL的glfwSetCursorPosCallback函数。
     *
-    * @param[in]       window            コールバックを呼んだWindow情報
-    * @param[in]       x                 x座標
-    * @param[in]       y                 x座標
+    * @param[in]       window            调用回调的窗口信息
+    * @param[in]       x                 x坐标
+    * @param[in]       y                 y坐标
     */
     void OnMouseCallBack(GLFWwindow* window, double x, double y);
 
     /**
-    * @brief シェーダーを登録する。
+    * @brief 注册着色器。
     */
     GLuint CreateShader();
 
     /**
-    * @brief   Window情報を取得する。
+    * @brief   获取窗口信息。
     */
-    GLFWwindow* GetWindow() { return _window; }
+    GLFWwindow* GetWindow()
+    {
+        return _window;
+    }
 
     /**
-    * @brief   View情報を取得する。
+    * @brief   获取视图信息。
     */
-    LAppView* GetView() { return _view; }
+    LAppView* GetView()
+    {
+        return _view;
+    }
 
     /**
-    * @brief   アプリケーションを終了するかどうか。
+    * @brief   是否结束应用程序。
     */
-    bool GetIsEnd() { return _isEnd; }
+    bool GetIsEnd()
+    {
+        return _isEnd;
+    }
 
     /**
-    * @brief   アプリケーションを終了する。
+    * @brief   结束应用程序。
     */
-    void AppEnd() { _isEnd = true; }
+    void AppEnd()
+    {
+        _isEnd = true;
+    }
 
-    LAppTextureManager* GetTextureManager() { return _textureManager; }
+    LAppTextureManager* GetTextureManager()
+    {
+        return _textureManager;
+    }
 
 private:
     /**
-    * @brief   コンストラクタ
+    * @brief   构造函数
     */
     LAppDelegate();
 
     /**
-    * @brief   デストラクタ
+    * @brief   析构函数
     */
     ~LAppDelegate();
 
     /**
-    * @brief   Cubism SDK の初期化
+    * @brief   初始化Cubism SDK。
     */
     void InitializeCubism();
 
     /**
-     * @brief   CreateShader内部関数 エラーチェック
+     * @brief   CreateShader内部函数 错误检查
      */
     bool CheckShader(GLuint shaderId);
 
-    LAppAllocator _cubismAllocator;              ///< Cubism SDK Allocator
-    Csm::CubismFramework::Option _cubismOption;  ///< Cubism SDK Option
-    GLFWwindow* _window;                         ///< OpenGL ウィンドウ
-    LAppView* _view;                             ///< View情報
-    bool _captured;                              ///< クリックしているか
-    float _mouseX;                               ///< マウスX座標
-    float _mouseY;                               ///< マウスY座標
-    bool _isEnd;                                 ///< APP終了しているか
-    LAppTextureManager* _textureManager;         ///< テクスチャマネージャー
+    LAppAllocator _cubismAllocator;              ///< Cubism SDK 分配器
+    Csm::CubismFramework::Option _cubismOption;  ///< Cubism SDK 选项
+    GLFWwindow* _window;                         ///< OpenGL 窗口
+    LAppView* _view;                             ///< 视图信息
+    bool _captured;                              ///< 是否点击
+    float _mouseX;                               ///< 鼠标X坐标
+    float _mouseY;                               ///< 鼠标Y坐标
+    bool _isEnd;                                 ///< APP是否结束
+    LAppTextureManager* _textureManager;         ///< 纹理管理器
 
-    int _windowWidth;                            ///< Initialize関数で設定したウィンドウ幅
-    int _windowHeight;                           ///< Initialize関数で設定したウィンドウ高さ
+    int _windowWidth;                            ///< Initialize函数设置的窗口宽度
+    int _windowHeight;                           ///< Initialize函数设置的窗口高度
 };
 
 class EventHandler
 {
 public:
     /**
-    * @brief   glfwSetMouseButtonCallback用コールバック関数。
+    * @brief   glfwSetMouseButtonCallback用回调函数。
     */
     static void OnMouseCallBack(GLFWwindow* window, int button, int action, int modify)
     {
@@ -143,11 +174,11 @@ public:
     }
 
     /**
-    * @brief   glfwSetCursorPosCallback用コールバック関数。
+    * @brief   glfwSetCursorPosCallback用回调函数。
     */
     static void OnMouseCallBack(GLFWwindow* window, double x, double y)
     {
-         LAppDelegate::GetInstance()->OnMouseCallBack(window, x, y);
+        LAppDelegate::GetInstance()->OnMouseCallBack(window, x, y);
     }
 
 };

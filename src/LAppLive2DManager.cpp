@@ -16,19 +16,43 @@
 #include "LAppModel.hpp"
 #include "LAppView.hpp"
 
+/*
+
+这段代码是 Live2D 示例项目中的 LAppLive2DManager 类，主要负责管理和操作模型。以下是代码的主要功能解释：
+
+FinishedMotion 函数：动作完成时的回调函数。
+GetInstance 函数：获取 LAppLive2DManager 类的单例实例。
+ReleaseInstance 函数：释放 LAppLive2DManager 类的单例实例。
+LAppLive2DManager 构造函数：初始化视图矩阵和场景索引。
+LAppLive2DManager 析构函数：释放所有模型。
+ReleaseAllModel 函数：释放所有模型。
+GetModel 函数：获取指定编号的模型。
+OnDrag 函数：处理拖拽事件，设置模型的拖拽状态。
+OnTap 函数：处理点击事件，判断点击区域并执行相应操作（如设置随机表情或启动随机动作）。
+OnUpdate 函数：更新模型的状态并进行绘制。
+NextScene 函数：切换到下一个场景。
+ChangeScene 函数：根据给定的索引更改场景，加载对应的模型并设置渲染目标。
+GetModelNum 函数：获取当前模型的数量。
+SetViewMatrix 函数：设置视图矩阵。
+
+*/
+
 using namespace Csm;
 using namespace LAppDefine;
 using namespace std;
 
-namespace {
+namespace
+{
     LAppLive2DManager* s_instance = NULL;
 
+    // 动作完成时的回调函数
     void FinishedMotion(ACubismMotion* self)
     {
         LAppPal::PrintLog("Motion Finished: %x", self);
     }
 }
 
+// 获取 LAppLive2DManager 实例
 LAppLive2DManager* LAppLive2DManager::GetInstance()
 {
     if (s_instance == NULL)
@@ -39,6 +63,7 @@ LAppLive2DManager* LAppLive2DManager::GetInstance()
     return s_instance;
 }
 
+// 释放 LAppLive2DManager 实例
 void LAppLive2DManager::ReleaseInstance()
 {
     if (s_instance != NULL)
@@ -49,6 +74,7 @@ void LAppLive2DManager::ReleaseInstance()
     s_instance = NULL;
 }
 
+// LAppLive2DManager 构造函数
 LAppLive2DManager::LAppLive2DManager()
     : _viewMatrix(NULL)
     , _sceneIndex(0)
@@ -58,11 +84,13 @@ LAppLive2DManager::LAppLive2DManager()
     ChangeScene(_sceneIndex);
 }
 
+// LAppLive2DManager 析构函数
 LAppLive2DManager::~LAppLive2DManager()
 {
     ReleaseAllModel();
 }
 
+// 释放所有模型
 void LAppLive2DManager::ReleaseAllModel()
 {
     for (csmUint32 i = 0; i < _models.GetSize(); i++)
@@ -73,6 +101,7 @@ void LAppLive2DManager::ReleaseAllModel()
     _models.Clear();
 }
 
+// 获取指定编号的模型
 LAppModel* LAppLive2DManager::GetModel(csmUint32 no) const
 {
     if (no < _models.GetSize())
@@ -83,6 +112,7 @@ LAppModel* LAppLive2DManager::GetModel(csmUint32 no) const
     return NULL;
 }
 
+// 处理拖拽事件
 void LAppLive2DManager::OnDrag(csmFloat32 x, csmFloat32 y) const
 {
     for (csmUint32 i = 0; i < _models.GetSize(); i++)
@@ -93,6 +123,7 @@ void LAppLive2DManager::OnDrag(csmFloat32 x, csmFloat32 y) const
     }
 }
 
+// 处理点击事件
 void LAppLive2DManager::OnTap(csmFloat32 x, csmFloat32 y)
 {
     if (DebugLogEnable)
@@ -120,7 +151,6 @@ void LAppLive2DManager::OnTap(csmFloat32 x, csmFloat32 y)
         }
     }
 }
-
 void LAppLive2DManager::OnUpdate() const
 {
     int width, height;
@@ -140,7 +170,7 @@ void LAppLive2DManager::OnUpdate() const
 
         if (model->GetModel()->GetCanvasWidth() > 1.0f && width < height)
         {
-            // 横に長いモデルを縦長ウィンドウに表示する際モデルの横サイズでscaleを算出する
+            // 当模型宽度大于1且窗口高度大于宽度时，以模型宽度为基准进行缩放
             model->GetModelMatrix()->SetWidth(2.0f);
             projection.Scale(1.0f, static_cast<float>(width) / static_cast<float>(height));
         }
@@ -149,19 +179,19 @@ void LAppLive2DManager::OnUpdate() const
             projection.Scale(static_cast<float>(height) / static_cast<float>(width), 1.0f);
         }
 
-        // 必要があればここで乗算
+        // 如果需要，可以在这里进行矩阵乘法
         if (_viewMatrix != NULL)
         {
             projection.MultiplyByMatrix(_viewMatrix);
         }
 
-        // モデル1体描画前コール
+        // 模型绘制前调用
         LAppDelegate::GetInstance()->GetView()->PreModelDraw(*model);
 
         model->Update();
-        model->Draw(projection);///< 参照渡しなのでprojectionは変質する
+        model->Draw(projection); // 传递引用，projection会发生变化
 
-        // モデル1体描画後コール
+        // 模型绘制后调用
         LAppDelegate::GetInstance()->GetView()->PostModelDraw(*model);
     }
 }
@@ -180,9 +210,9 @@ void LAppLive2DManager::ChangeScene(Csm::csmInt32 index)
         LAppPal::PrintLog("[APP]model index: %d", _sceneIndex);
     }
 
-    // ModelDir[]に保持したディレクトリ名から
-    // model3.jsonのパスを決定する.
-    // ディレクトリ名とmodel3.jsonの名前を一致させておくこと.
+    // 根据ModelDir[]中保存的目录名确定
+    // model3.json的路径。
+    // 请确保目录名与model3.json的名称相匹配。
     std::string model = ModelDir[index];
     std::string modelPath = ResourcesPath + model + "/";
     std::string modelJsonName = ModelDir[index];
@@ -192,25 +222,21 @@ void LAppLive2DManager::ChangeScene(Csm::csmInt32 index)
     _models.PushBack(new LAppModel());
     _models[0]->LoadAssets(modelPath.c_str(), modelJsonName.c_str());
 
-    /*
-     * モデル半透明表示を行うサンプルを提示する。
-     * ここでUSE_RENDER_TARGET、USE_MODEL_RENDER_TARGETが定義されている場合
-     * 別のレンダリングターゲットにモデルを描画し、描画結果をテクスチャとして別のスプライトに張り付ける。
-     */
+    // 显示半透明模型的示例。
     {
 #if defined(USE_RENDER_TARGET)
-        // LAppViewの持つターゲットに描画を行う場合、こちらを選択
+        // 如果要在LAppView的目标上进行绘制，请选择此选项
         LAppView::SelectTarget useRenderTarget = LAppView::SelectTarget_ViewFrameBuffer;
 #elif defined(USE_MODEL_RENDER_TARGET)
-        // 各LAppModelの持つターゲットに描画を行う場合、こちらを選択
+        // 如果要在每个LAppModel的目标上进行绘制，请选择此选项
         LAppView::SelectTarget useRenderTarget = LAppView::SelectTarget_ModelFrameBuffer;
 #else
-        // デフォルトのメインフレームバッファへレンダリングする(通常)
+        // 默认渲染到主帧缓冲区（通常）
         LAppView::SelectTarget useRenderTarget = LAppView::SelectTarget_None;
 #endif
 
 #if defined(USE_RENDER_TARGET) || defined(USE_MODEL_RENDER_TARGET)
-        // モデル個別にαを付けるサンプルとして、もう1体モデルを作成し、少し位置をずらす
+        // 作为一个示例，为每个模型分配α值，创建另一个模型，并稍微移动位置
         _models.PushBack(new LAppModel());
         _models[1]->LoadAssets(modelPath.c_str(), modelJsonName.c_str());
         _models[1]->GetModelMatrix()->TranslateX(0.2f);
@@ -218,7 +244,7 @@ void LAppLive2DManager::ChangeScene(Csm::csmInt32 index)
 
         LAppDelegate::GetInstance()->GetView()->SwitchRenderingTarget(useRenderTarget);
 
-        // 別レンダリング先を選択した際の背景クリア色
+        // 当选择其他渲染目标时的背景清除颜色
         float clearColor[3] = { 1.0f, 1.0f, 1.0f };
         LAppDelegate::GetInstance()->GetView()->SetRenderTargetClearColor(clearColor[0], clearColor[1], clearColor[2]);
     }
@@ -231,7 +257,8 @@ csmUint32 LAppLive2DManager::GetModelNum() const
 
 void LAppLive2DManager::SetViewMatrix(CubismMatrix44* m)
 {
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 16; i++)
+    {
         _viewMatrix->GetArray()[i] = m->GetArray()[i];
     }
 }

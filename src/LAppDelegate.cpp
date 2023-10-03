@@ -15,11 +15,30 @@
 #include "LAppLive2DManager.hpp"
 #include "LAppTextureManager.hpp"
 
+/*
+这段代码的含义如下：
+
+LAppDelegate::Initialize() 函数用于初始化应用程序，包括初始化 GLFW、创建窗口、设置上下文、初始化 GLEW、设置纹理采样、设置透明度、注册回调函数、初始化 AppView 和 Cubism SDK。
+LAppDelegate::Release() 函数用于释放应用程序资源，包括删除窗口、终止 GLFW、删除纹理管理器和视图、释放 LAppLive2DManager 实例以及释放 Cubism SDK。
+LAppDelegate::Run() 函数是应用程序的主循环，负责处理窗口大小变化、更新时间、清除屏幕、更新绘制、交换缓冲以及处理事件。
+LAppDelegate::InitializeCubism() 函数用于设置和初始化 Cubism SDK，加载模型以及初始化精灵。
+其他辅助函数包括鼠标回调函数和创建着色器函数。总体来说，这段代码主要用于初始化、运行和释放基于 Live2D Cubism SDK 的应用程序。
+
+OnMouseCallBack 函数处理鼠标点击事件，当按下鼠标左键时调用 _view->OnTouchesBegan，当松开鼠标左键时调用 _view->OnTouchesEnded。
+
+另一个 OnMouseCallBack 函数处理鼠标移动事件，当鼠标移动时调用 _view->OnTouchesMoved。
+
+CreateShader 函数创建一个着色器程序，包括编译顶点着色器和片段着色器，并将它们链接到一个程序对象。这个函数返回程序对象的 ID。
+
+CheckShader 函数检查着色器是否编译成功，如果编译失败，它将输出错误日志并返回 false。
+*/
+
 using namespace Csm;
 using namespace std;
 using namespace LAppDefine;
 
-namespace {
+namespace
+{
     LAppDelegate* s_instance = NULL;
 }
 
@@ -50,17 +69,17 @@ bool LAppDelegate::Initialize()
         LAppPal::PrintLog("START");
     }
 
-    // GLFWの初期化
+    // 初始化 GLFW
     if (glfwInit() == GL_FALSE)
     {
         if (DebugLogEnable)
         {
-            LAppPal::PrintLog("Can't initilize GLFW");
+            Can't initilize GLFW");
         }
         return GL_FALSE;
     }
 
-    // Windowの生成_
+    // 创建窗口
     _window = glfwCreateWindow(RenderTargetWidth, RenderTargetHeight, "SAMPLE", NULL, NULL);
     if (_window == NULL)
     {
@@ -72,11 +91,12 @@ bool LAppDelegate::Initialize()
         return GL_FALSE;
     }
 
-    // Windowのコンテキストをカレントに設定
+    // 设置当前窗口的上下文
     glfwMakeContextCurrent(_window);
     glfwSwapInterval(1);
 
-    if (glewInit() != GLEW_OK) {
+    if (glewInit() != GLEW_OK)
+    {
         if (DebugLogEnable)
         {
             LAppPal::PrintLog("Can't initilize glew.");
@@ -85,28 +105,28 @@ bool LAppDelegate::Initialize()
         return GL_FALSE;
     }
 
-    //テクスチャサンプリング設定
+    //设置纹理采样
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-    //透過設定
+    //设置透明度
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    //コールバック関数の登録
+    //注册回调函数
     glfwSetMouseButtonCallback(_window, EventHandler::OnMouseCallBack);
     glfwSetCursorPosCallback(_window, EventHandler::OnMouseCallBack);
 
-    // ウィンドウサイズ記憶
+    // 记录窗口大小
     int width, height;
     glfwGetWindowSize(LAppDelegate::GetInstance()->GetWindow(), &width, &height);
     _windowWidth = width;
     _windowHeight = height;
 
-    //AppViewの初期化
+    // 初始化 AppView
     _view->Initialize();
 
-    // Cubism SDK の初期化
+    // 初始化 Cubism SDK
     InitializeCubism();
 
     return GL_TRUE;
@@ -114,7 +134,7 @@ bool LAppDelegate::Initialize()
 
 void LAppDelegate::Release()
 {
-    // Windowの削除
+    // 删除窗口
     glfwDestroyWindow(_window);
 
     glfwTerminate();
@@ -122,49 +142,49 @@ void LAppDelegate::Release()
     delete _textureManager;
     delete _view;
 
-    // リソースを解放
+    // 释放资源
     LAppLive2DManager::ReleaseInstance();
 
-    //Cubism SDK の解放
+    // 释放 Cubism SDK
     CubismFramework::Dispose();
 }
 
 void LAppDelegate::Run()
 {
-    //メインループ
+    // 主循环
     while (glfwWindowShouldClose(_window) == GL_FALSE && !_isEnd)
     {
         int width, height;
         glfwGetWindowSize(LAppDelegate::GetInstance()->GetWindow(), &width, &height);
-        if( (_windowWidth!=width || _windowHeight!=height) && width>0 && height>0)
+        if ((_windowWidth != width || _windowHeight != height) && width > 0 && height > 0)
         {
-            //AppViewの初期化
+            // 初始化 AppView
             _view->Initialize();
-            // スプライトサイズを再設定
+            // 重新设置精灵大小
             _view->ResizeSprite();
-            // サイズを保存しておく
+            // 保存大小
             _windowWidth = width;
             _windowHeight = height;
 
-            // ビューポート変更
+            // 修改视口
             glViewport(0, 0, width, height);
         }
 
-        // 時間更新
+        // 更新时间
         LAppPal::UpdateTime();
 
-        // 画面の初期化
+        // 清除屏幕
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearDepth(1.0);
 
-        //描画更新
+        // 更新绘制
         _view->Render();
 
-        // バッファの入れ替え
+        // 交换缓冲
         glfwSwapBuffers(_window);
 
-        // Poll for and process events
+        // 处理事件
         glfwPollEvents();
     }
 
@@ -173,7 +193,7 @@ void LAppDelegate::Run()
     LAppDelegate::ReleaseInstance();
 }
 
-LAppDelegate::LAppDelegate():
+LAppDelegate::LAppDelegate() :
     _cubismOption(),
     _window(NULL),
     _captured(false),
@@ -194,18 +214,18 @@ LAppDelegate::~LAppDelegate()
 
 void LAppDelegate::InitializeCubism()
 {
-    //setup cubism
+    // 设置cubism
     _cubismOption.LogFunction = LAppPal::PrintMessage;
     _cubismOption.LoggingLevel = LAppDefine::CubismLoggingLevel;
     Csm::CubismFramework::StartUp(&_cubismAllocator, &_cubismOption);
 
-    //Initialize cubism
+    // 初始化cubism
     CubismFramework::Initialize();
 
-    //load model
+    // 加载模型
     LAppLive2DManager::GetInstance();
 
-    //default proj
+    // 默认投影
     CubismMatrix44 projection;
 
     LAppPal::UpdateTime();
@@ -224,11 +244,13 @@ void LAppDelegate::OnMouseCallBack(GLFWwindow* window, int button, int action, i
         return;
     }
 
+    // 当按下鼠标左键时
     if (GLFW_PRESS == action)
     {
         _captured = true;
         _view->OnTouchesBegan(_mouseX, _mouseY);
     }
+    // 当松开鼠标左键时
     else if (GLFW_RELEASE == action)
     {
         if (_captured)
@@ -258,7 +280,7 @@ void LAppDelegate::OnMouseCallBack(GLFWwindow* window, double x, double y)
 
 GLuint LAppDelegate::CreateShader()
 {
-    //バーテックスシェーダのコンパイル
+    // 编译顶点着色器
     GLuint vertexShaderId = glCreateShader(GL_VERTEX_SHADER);
     const char* vertexShader =
         "#version 120\n"
@@ -271,12 +293,12 @@ GLuint LAppDelegate::CreateShader()
         "}";
     glShaderSource(vertexShaderId, 1, &vertexShader, NULL);
     glCompileShader(vertexShaderId);
-    if(!CheckShader(vertexShaderId))
+    if (!CheckShader(vertexShaderId))
     {
         return 0;
     }
 
-    //フラグメントシェーダのコンパイル
+    // 编译片段着色器
     GLuint fragmentShaderId = glCreateShader(GL_FRAGMENT_SHADER);
     const char* fragmentShader =
         "#version 120\n"
@@ -293,12 +315,12 @@ GLuint LAppDelegate::CreateShader()
         return 0;
     }
 
-    //プログラムオブジェクトの作成
+    // 创建程序对象
     GLuint programId = glCreateProgram();
     glAttachShader(programId, vertexShaderId);
     glAttachShader(programId, fragmentShaderId);
 
-    // リンク
+    // 链接
     glLinkProgram(programId);
 
     glUseProgram(programId);

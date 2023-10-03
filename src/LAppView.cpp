@@ -198,29 +198,37 @@ void LAppView::OnTouchesMoved(float px, float py) const
     Live2DManager->OnDrag(viewX, viewY);
 }
 
+/*
+这段代码是处理触摸屏幕结束事件的函数。当用户触摸屏幕并松开手指时，会触发此函数。
+
+触摸结束：首先获取LAppLive2DManager的实例，并调用OnDrag函数，传入参数为0.0f，表示拖拽结束。
+单次点击：获取触摸点的逻辑坐标，然后调用live2DManager->OnTap(x, y)处理点击事件。
+是否点击到齿轮：判断用户是否点击到了齿轮图标，如果是，则调用live2DManager->NextScene()切换到下一个场景。
+是否点击到电源按钮：判断用户是否点击到了电源按钮，如果是，则调用LAppDelegate::GetInstance()->AppEnd()结束应用。
+
+*/
 void LAppView::OnTouchesEnded(float px, float py) const
 {
-    // タッチ終了
+    // 触摸结束
     LAppLive2DManager* live2DManager = LAppLive2DManager::GetInstance();
     live2DManager->OnDrag(0.0f, 0.0f);
     {
-
-        // シングルタップ
-        float x = _deviceToScreen->TransformX(_touchManager->GetX()); // 論理座標変換した座標を取得。
-        float y = _deviceToScreen->TransformY(_touchManager->GetY()); // 論理座標変換した座標を取得。
+        // 单次点击
+        float x = _deviceToScreen->TransformX(_touchManager->GetX()); // 获取转换为逻辑坐标的坐标。
+        float y = _deviceToScreen->TransformY(_touchManager->GetY()); // 获取转换为逻辑坐标的坐标。
         if (DebugTouchLogEnable)
         {
             LAppPal::PrintLog("[APP]touchesEnded x:%.2f y:%.2f", x, y);
         }
         live2DManager->OnTap(x, y);
 
-        // 歯車にタップしたか
+        // 是否点击到齿轮
         if (_gear->IsHit(px, py))
         {
             live2DManager->NextScene();
         }
 
-        // 電源ボタンにタップしたか
+        // 是否点击到电源按钮
         if (_power->IsHit(px, py))
         {
             LAppDelegate::GetInstance()->AppEnd();

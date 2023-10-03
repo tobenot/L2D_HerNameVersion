@@ -7,98 +7,125 @@
 
 #pragma once
 
+/*
+
+这段代码是一个名为 TouchManager 的类，它主要用于处理触摸事件。类中包含了一些公共方法，用于获取触摸事件的相关信息，如触摸点坐标、移动距离、缩放比例等。此外，还有一些私有方法，用于计算两点之间的距离和移动量。
+
+公共方法：
+
+TouchesBegan：触摸开始时的事件处理
+TouchesMoved：触摸移动（拖拽）时的事件处理，分为单指和双指两种情况
+GetFlickDistance：获取触摸滑动距离
+私有方法：
+
+CalculateDistance：计算两点之间的距离
+CalculateMovingAmount：计算两个值的移动量
+
+总结一下，这个 TouchManager 类主要用于处理触摸事件，包括触摸开始、移动（拖拽）等。类中的公共方法提供了获取触摸事件相关信息的功能，而私有方法则用于计算触摸事件中涉及的一些数值，如距离和移动量。通过这个类，可以方便地处理触摸事件，并根据需要获取相关信息。
+*/
 class TouchManager
 {
 public:
 
     TouchManager();
 
-    float GetCenterX() const { return _lastX; }
-    float GetCenterY() const { return _lastY; }
-    float GetDeltaX() const { return _deltaX; }
-    float GetDeltaY() const{ return _deltaY; }
-    float GetStartX() const{ return _startX; }
-    float GetStartY() const{ return _startY; }
-    float GetScale() const { return _scale; }
-    float GetX() const{ return _lastX; }
-    float GetY() const{ return _lastY; }
-    float GetX1() const{ return _lastX1; }
-    float GetY1() const{ return _lastY1; }
-    float GetX2() const{ return _lastX2; }
-    float GetY2() const{ return _lastY2; }
-    bool IsSingleTouch() const { return _touchSingle; }
-    bool IsFlickAvailable() const { return _flipAvailable; }
-    void DisableFlick() { _flipAvailable = false; }
+    float GetCenterX() const
+    {
+        return _lastX;
+    }
+    float GetCenterY() const
+    {
+        return _lastY;
+    }
+    float GetDeltaX() const
+    {
+        return _deltaX;
+    }
+    float GetDeltaY() const
+    {
+        return _deltaY;
+    }
+    float GetStartX() const
+    {
+        return _startX;
+    }
+    float GetStartY() const
+    {
+        return _startY;
+    }
+    float GetScale() const
+    {
+        return _scale;
+    }
+    float GetX() const
+    {
+        return _lastX;
+    }
+    float GetY() const
+    {
+        return _lastY;
+    }
+    float GetX1() const
+    {
+        return _lastX1;
+    }
+    float GetY1() const
+    {
+        return _lastY1;
+    }
+    float GetX2() const
+    {
+        return _lastX2;
+    }
+    float GetY2() const
+    {
+        return _lastY2;
+    }
+    bool IsSingleTouch() const
+    {
+        return _touchSingle;
+    }
+    bool IsFlickAvailable() const
+    {
+        return _flipAvailable;
+    }
+    void DisableFlick()
+    {
+        _flipAvailable = false;
+    }
 
-    /*
-    * @brief タッチ開始時イベント
-    *
-    * @param[in] deviceY    タッチした画面のyの値
-    * @param[in] deviceX    タッチした画面のxの値
-    */
+    // 触摸开始时的事件
     void TouchesBegan(float deviceX, float deviceY);
 
-    /*
-    * @brief ドラッグ時のイベント
-    *
-    * @param[in] deviceX    タッチした画面のyの値
-    * @param[in] deviceY    タッチした画面のxの値
-    */
+    // 拖拽时的事件
     void TouchesMoved(float deviceX, float deviceY);
 
-    /*
-    * @brief ドラッグ時のイベント
-    *
-    * @param[in] deviceX1   1つめのタッチした画面のxの値
-    * @param[in] deviceY1   1つめのタッチした画面のyの値
-    * @param[in] deviceX2   2つめのタッチした画面のxの値
-    * @param[in] deviceY2   2つめのタッチした画面のyの値
-    */
+    // 双指拖拽时的事件
     void TouchesMoved(float deviceX1, float deviceY1, float deviceX2, float deviceY2);
 
-    /*
-    * @brief フリックの距離測定
-    *
-    * @return フリック距離
-    */
+    // 计算触摸滑动距离
     float GetFlickDistance() const;
 
 private:
-    /*
-    * @brief 点1から点2への距離を求める
-    *
-    * @param[in] x1 1つめのタッチした画面のxの値
-    * @param[in] y1 1つめのタッチした画面のyの値
-    * @param[in] x2 2つめのタッチした画面のxの値
-    * @param[in] y2 2つめのタッチした画面のyの値
-    * @return   2点の距離
-    */
+    // 计算两点之间的距离
     float CalculateDistance(float x1, float y1, float x2, float y2) const;
 
-    /*
-    * 二つの値から、移動量を求める。
-    * 違う方向の場合は移動量０。同じ方向の場合は、絶対値が小さい方の値を参照する
-    *
-    * @param[in] v1    1つめの移動量
-    * @param[in] v2    2つめの移動量
-    *
-    * @return   小さい方の移動量
-    */
+    // 计算两个值的移动量
     float CalculateMovingAmount(float v1, float v2);
 
-    float _startY;              // タッチを開始した時のxの値
-    float _startX;              // タッチを開始した時のyの値
-    float _lastX;               // シングルタッチ時のxの値
-    float _lastY;               // シングルタッチ時のyの値
-    float _lastX1;              // ダブルタッチ時の一つ目のxの値
-    float _lastY1;              // ダブルタッチ時の一つ目のyの値
-    float _lastX2;              // ダブルタッチ時の二つ目のxの値
-    float _lastY2;              // ダブルタッチ時の二つ目のyの値
-    float _lastTouchDistance;   // 2本以上でタッチしたときの指の距離
-    float _deltaX;              // 前回の値から今回の値へのxの移動距離。
-    float _deltaY;              // 前回の値から今回の値へのyの移動距離。
-    float _scale;               // このフレームで掛け合わせる拡大率。拡大操作中以外は1。
-    bool _touchSingle;          // シングルタッチ時はtrue
-    bool _flipAvailable;        // フリップが有効かどうか
+    float _startY;              // 触摸开始时的x坐标
+    float _startX;              // 触摸开始时的y坐标
+    float _lastX;               // 单指触摸时的x坐标
+    float _lastY;               // 单指触摸时的y坐标
+    float _lastX1;              // 双指触摸时第一个触点的x坐标
+    float _lastY1;              // 双指触摸时第一个触点的y坐标
+    float _lastX2;              // 双指触摸时第二个触点的x坐标
+    float _lastY2;              // 双指触摸时第二个触点的y坐标
+    float _lastTouchDistance;   // 两指触摸时两个触点之间的距离
+    float _deltaX;              // x轴移动距离
+    float _deltaY;              // y轴移动距离
+    float _scale;               // 缩放比例
+    bool _touchSingle;          // 是否单指触摸
+    bool _flipAvailable;        // 是否可以翻转
 
 };
