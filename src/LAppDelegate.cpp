@@ -74,7 +74,7 @@ bool LAppDelegate::Initialize()
     {
         if (DebugLogEnable)
         {
-            Can't initilize GLFW");
+            LAppPal::PrintLog("Can't initilize GLFW");
         }
         return GL_FALSE;
     }
