@@ -455,6 +455,12 @@ CubismMotionQueueEntryHandle LAppModel::StartMotion(const csmChar* group, csmInt
         }
         return InvalidMotionQueueEntryHandleValue;
     }
+    const csmInt32 count = _modelSetting->GetMotionCount(group);
+    if (no >= count)
+    {
+        LAppPal::PrintLog("[APP]motion index out of range. ID:[%d] Range:[%d]", no, count);
+        return InvalidMotionQueueEntryHandleValue;
+    }
     const csmString fileName = _modelSetting->GetMotionFileName(group, no);
     //ex) idle_0
     csmString name = Utils::CubismString::GetFormatedString("%s_%d", group, no);
@@ -560,6 +566,10 @@ csmBool LAppModel::HitTest(const csmChar* hitAreaName, csmFloat32 x, csmFloat32 
 
 void LAppModel::SetExpression(const csmChar* expressionID)
 {
+    if (!_expressions.IsExist(expressionID))
+    {
+        LAppPal::PrintLog("[APP]expression index out of range. ID:[%d] Range:[%d]", expressionID, _expressions.GetSize());
+    }
     ACubismMotion* motion = _expressions[expressionID];
     if (_debugMode)
     {
