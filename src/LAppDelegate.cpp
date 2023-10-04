@@ -80,7 +80,7 @@ bool LAppDelegate::Initialize()
     }
 
     // 创建窗口
-    _window = glfwCreateWindow(RenderTargetWidth, RenderTargetHeight, "SAMPLE", NULL, NULL);
+    _window = glfwCreateWindow(RenderTargetWidth, RenderTargetHeight, "WHAT YOU SEE", NULL, NULL);
     if (_window == NULL)
     {
         if (DebugLogEnable)

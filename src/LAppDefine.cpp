@@ -28,7 +28,7 @@ namespace LAppDefine
     const csmFloat32 ViewLogicalMaxTop = 2.0f;
 
     // 相对路径
-    const csmChar* ResourcesPath = "Resources/";
+    const csmChar* ResourcesPath = "resources/";
 
     // 模型后面的背景图片文件
     const csmChar* BackImageName = "back_class_normal.png";
@@ -41,6 +41,7 @@ namespace LAppDefine
     // 模型所在目录名的数组
     // 保持目录名与model3.json的名称一致
     const csmChar* ModelDir[] = {
+        "ariu",
         "Haru",
         "Hiyori",
         "Mark",
@@ -49,6 +50,16 @@ namespace LAppDefine
         "Mao"
     };
     const csmInt32 ModelDirSize = sizeof(ModelDir) / sizeof(const csmChar*);
+
+    const float ModelFix[][3] = {
+        {-1.f, 2.0f, 2.0f},
+        {-1.f, 2.0f, 2.0f},
+        {-1.f, 2.0f, 2.0f},
+        {-1.f, 2.0f, 2.0f},
+        {-1.f, 2.0f, 2.0f},
+        {-1.f, 2.0f, 2.0f},
+        {-0.65f, 2.2f, 2.2f},
+    };
 
     // 与外部定义文件(json)保持一致
     const csmChar* MotionGroupIdle = "Idle"; // 空闲
@@ -75,6 +86,6 @@ namespace LAppDefine
     const CubismFramework::Option::LogLevel CubismLoggingLevel = CubismFramework::Option::LogLevel_Verbose;
 
     // 默认渲染目标尺寸
-    const csmInt32 RenderTargetWidth = 1900;
-    const csmInt32 RenderTargetHeight = 1000;
+    const csmInt32 RenderTargetWidth = 900;
+    const csmInt32 RenderTargetHeight = 900;
 }

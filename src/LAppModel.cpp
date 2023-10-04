@@ -455,9 +455,7 @@ CubismMotionQueueEntryHandle LAppModel::StartMotion(const csmChar* group, csmInt
         }
         return InvalidMotionQueueEntryHandleValue;
     }
-
     const csmString fileName = _modelSetting->GetMotionFileName(group, no);
-
     //ex) idle_0
     csmString name = Utils::CubismString::GetFormatedString("%s_%d", group, no);
     CubismMotion* motion = static_cast<CubismMotion*>(_motions[name.GetRawString()]);
@@ -492,7 +490,6 @@ CubismMotionQueueEntryHandle LAppModel::StartMotion(const csmChar* group, csmInt
     {
         motion->SetFinishedMotionHandler(onFinishedMotionHandler);
     }
-
     //voice
     csmString voice = _modelSetting->GetMotionSoundFileName(group, no);
     if (strcmp(voice.GetRawString(), "") != 0)
@@ -501,7 +498,6 @@ CubismMotionQueueEntryHandle LAppModel::StartMotion(const csmChar* group, csmInt
         path = _modelHomeDir + path;
         _wavFileHandler.Start(path);
     }
-
     if (_debugMode)
     {
         LAppPal::PrintLog("[APP]start motion: [%s_%d]", group, no);
@@ -515,9 +511,7 @@ CubismMotionQueueEntryHandle LAppModel::StartRandomMotion(const csmChar* group, 
     {
         return InvalidMotionQueueEntryHandleValue;
     }
-
     csmInt32 no = rand() % _modelSetting->GetMotionCount(group);
-
     return StartMotion(group, no, priority, onFinishedMotionHandler);
 }
 

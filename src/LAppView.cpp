@@ -155,8 +155,9 @@ void LAppView::InitializeSprite()
     float x = width * 0.5f;
     float y = height * 0.5f;
     float fWidth = static_cast<float>(backgroundTexture->width * 2.0f);
-    float fHeight = static_cast<float>(height * 0.95f);
+    float fHeight = static_cast<float>(height * 1.00f); //0.95f
     _back = new LAppSprite(x, y, fWidth, fHeight, backgroundTexture->id, _programId);
+    // LAppView::ResizeSprite()還有一份
 
     imageName = GearImageName;
     LAppTextureManager::TextureInfo* gearTexture = textureManager->CreateTextureFromPngFile(resourcesPath + imageName);
@@ -348,6 +349,7 @@ float LAppView::GetSpriteAlpha(int assign) const
 
 void LAppView::ResizeSprite()
 {
+    // 這裡才是改變屏幕大小的回調，搜索0.95可以發現
     LAppTextureManager* textureManager = LAppDelegate::GetInstance()->GetTextureManager();
     if (!textureManager)
     {
@@ -372,7 +374,7 @@ void LAppView::ResizeSprite()
             x = width * 0.5f;
             y = height * 0.5f;
             fWidth = static_cast<float>(texInfo->width * 2);
-            fHeight = static_cast<float>(height) * 0.95f;
+            fHeight = static_cast<float>(height) * 1.00f; //0.95f
             _back->ResetRect(x, y, fWidth, fHeight);
         }
     }

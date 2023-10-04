@@ -153,6 +153,7 @@ void LAppLive2DManager::OnTap(csmFloat32 x, csmFloat32 y)
 }
 void LAppLive2DManager::OnUpdate() const
 {
+    // 缩放屏幕大小？
     int width, height;
     glfwGetWindowSize(LAppDelegate::GetInstance()->GetWindow(), &width, &height);
 
@@ -178,6 +179,13 @@ void LAppLive2DManager::OnUpdate() const
         {
             projection.Scale(static_cast<float>(height) / static_cast<float>(width), 1.0f);
         }
+
+        // 对模型大小的修改
+        // 在这里添加平移操作，向上移动模型，只显示半身
+        model->GetModelMatrix()->TranslateY(ModelFix[_sceneIndex][0]);
+        
+        // 放大模型2倍
+        model->GetModelMatrix()->Scale(ModelFix[_sceneIndex][1], ModelFix[_sceneIndex][2]);
 
         // 如果需要，可以在这里进行矩阵乘法
         if (_viewMatrix != NULL)
@@ -260,5 +268,41 @@ void LAppLive2DManager::SetViewMatrix(CubismMatrix44* m)
     for (int i = 0; i < 16; i++)
     {
         _viewMatrix->GetArray()[i] = m->GetArray()[i];
+    }
+}
+
+Csm::CubismMotionQueueEntryHandle LAppLive2DManager::StartMotion(const Csm::csmChar* group, Csm::csmInt32 no, Csm::csmInt32 priority)
+{
+    Csm::CubismMotionQueueEntryHandle motionQueueEntryHandle = 0;
+    for (csmUint32 i = 0; i < _models.GetSize(); i++)
+    {
+        motionQueueEntryHandle = _models[i]->StartMotion(group, no, priority);
+    }
+    return motionQueueEntryHandle;
+}
+
+Csm::CubismMotionQueueEntryHandle LAppLive2DManager::StartRandomMotion(const Csm::csmChar* group, Csm::csmInt32 priority)
+{
+    Csm::CubismMotionQueueEntryHandle motionQueueEntryHandle = 0;
+    for (csmUint32 i = 0; i < _models.GetSize(); i++)
+    {
+        motionQueueEntryHandle = _models[i]->StartRandomMotion(group, priority);
+    }
+    return motionQueueEntryHandle;
+}
+
+void LAppLive2DManager::SetExpression(const Csm::csmChar* expressionID)
+{
+    for (csmUint32 i = 0; i < _models.GetSize(); i++)
+    {
+        _models[i]->SetExpression(expressionID);
+    }
+}
+
+void LAppLive2DManager::SetRandomExpression()
+{
+    for (csmUint32 i = 0; i < _models.GetSize(); i++)
+    {
+        _models[i]->SetRandomExpression();
     }
 }

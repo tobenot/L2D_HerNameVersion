@@ -10,6 +10,7 @@
 #include <CubismFramework.hpp>
 #include <Math/CubismMatrix44.hpp>
 #include <Type/csmVector.hpp>
+#include <Motion/CubismMotionQueueEntry.hpp>
 
 class LAppModel;
 
@@ -118,6 +119,11 @@ public:
      * @brief   设置viewMatrix
      */
     void SetViewMatrix(Live2D::Cubism::Framework::CubismMatrix44* m);
+
+    Csm::CubismMotionQueueEntryHandle StartMotion(const Csm::csmChar* group, Csm::csmInt32 no, Csm::csmInt32 priority);
+    Csm::CubismMotionQueueEntryHandle StartRandomMotion(const Csm::csmChar* group, Csm::csmInt32 priority);
+    void SetExpression(const Csm::csmChar* expressionID);
+    void SetRandomExpression();
 
 private:
     /**

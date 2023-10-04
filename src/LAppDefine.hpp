@@ -43,6 +43,7 @@ namespace LAppDefine
     // 模型定义--------------------------------------------
     extern const csmChar* ModelDir[];               ///< 模型所在目录名的数组。请确保目录名与model3.json的名称相匹配。
     extern const csmInt32 ModelDirSize;             ///< 模型目录数组的大小
+    extern const float ModelFix[][3];                  //模型渲染时的偏移修正
 
     // 与外部定义文件(json)保持一致
     extern const csmChar* MotionGroupIdle;          ///< 空闲时播放的动作列表
