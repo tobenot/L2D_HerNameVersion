@@ -41,23 +41,11 @@ namespace LAppDefine
     // 模型所在目录名的数组
     // 保持目录名与model3.json的名称一致
     const csmChar* ModelDir[] = {
-        "ariu",
-        "Haru",
-        "Hiyori",
-        "Mark",
-        "Natori",
-        "Rice",
         "Mao"
     };
     const csmInt32 ModelDirSize = sizeof(ModelDir) / sizeof(const csmChar*);
 
     const float ModelFix[][3] = {
-        {-1.f, 2.0f, 2.0f},
-        {-1.f, 2.0f, 2.0f},
-        {-1.f, 2.0f, 2.0f},
-        {-1.f, 2.0f, 2.0f},
-        {-1.f, 2.0f, 2.0f},
-        {-1.f, 2.0f, 2.0f},
         {-0.65f, 2.2f, 2.2f},
     };
 
