@@ -131,6 +131,9 @@ void LAppLive2DManager::OnTap(csmFloat32 x, csmFloat32 y)
         LAppPal::PrintLog("[APP]tap point: {x:%.2f y:%.2f}", x, y);
     }
 
+    /*
+    * 
+    * 暂时忽略点击回调，不会因为点击而播动作
     for (csmUint32 i = 0; i < _models.GetSize(); i++)
     {
         if (_models[i]->HitTest(HitAreaNameHead, x, y))
@@ -150,6 +153,7 @@ void LAppLive2DManager::OnTap(csmFloat32 x, csmFloat32 y)
             _models[i]->StartRandomMotion(MotionGroupTapBody, PriorityNormal, FinishedMotion);
         }
     }
+    */
 }
 void LAppLive2DManager::OnUpdate() const
 {
