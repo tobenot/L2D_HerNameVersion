@@ -161,8 +161,8 @@ private:
     Csm::CubismViewMatrix* _viewMatrix;      ///< viewMatrix
     GLuint _programId;                       ///< 着色器ID
     LAppSprite* _back;                       ///< 背景图片
-    LAppSprite* _gear;                       ///< 齿轮图片
-    LAppSprite* _power;                      ///< 电源图片
+   // LAppSprite* _gear;                       ///< 齿轮图片
+   // LAppSprite* _power;                      ///< 电源图片
 
     // 使用另一个渲染目标的方式时使用
     LAppSprite* _renderSprite;                                      ///< 根据模式绘制_renderBuffer的纹理

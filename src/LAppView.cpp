@@ -23,8 +23,8 @@ using namespace LAppDefine;
 LAppView::LAppView():
     _programId(0),
     _back(NULL),
-    _gear(NULL),
-    _power(NULL),
+    //_gear(NULL),
+    //_power(NULL),
     _renderSprite(NULL),
     _renderTarget(SelectTarget_None)
 {
@@ -51,8 +51,8 @@ LAppView::~LAppView()
     delete _deviceToScreen;
     delete _touchManager;
     delete _back;
-    delete _gear;
-    delete _power;
+    //delete _gear;
+    //delete _power;
 }
 
 void LAppView::Initialize()
@@ -104,8 +104,8 @@ void LAppView::Initialize()
 void LAppView::Render()
 {
     _back->Render();
-    _gear->Render();
-    _power->Render();
+    //_gear->Render();
+    //_power->Render();
 
     LAppLive2DManager* Live2DManager = LAppLive2DManager::GetInstance();
 
@@ -159,6 +159,7 @@ void LAppView::InitializeSprite()
     _back = new LAppSprite(x, y, fWidth, fHeight, backgroundTexture->id, _programId);
     // LAppView::ResizeSprite()還有一份
 
+    /*
     imageName = GearImageName;
     LAppTextureManager::TextureInfo* gearTexture = textureManager->CreateTextureFromPngFile(resourcesPath + imageName);
 
@@ -176,6 +177,7 @@ void LAppView::InitializeSprite()
     fWidth = static_cast<float>(powerTexture->width);
     fHeight = static_cast<float>(powerTexture->height);
     _power = new LAppSprite(x, y, fWidth, fHeight, powerTexture->id, _programId);
+    */
 
     // 画面全体を覆うサイズ
     x = width * 0.5f;
@@ -223,6 +225,7 @@ void LAppView::OnTouchesEnded(float px, float py) const
         }
         live2DManager->OnTap(x, y);
 
+        /*
         // 是否点击到齿轮
         if (_gear->IsHit(px, py))
         {
@@ -234,6 +237,7 @@ void LAppView::OnTouchesEnded(float px, float py) const
         {
             LAppDelegate::GetInstance()->AppEnd();
         }
+        */
     }
 }
 
@@ -378,7 +382,7 @@ void LAppView::ResizeSprite()
             _back->ResetRect(x, y, fWidth, fHeight);
         }
     }
-
+    /*
     if (_power)
     {
         GLuint id = _power->GetTextureId();
@@ -406,4 +410,5 @@ void LAppView::ResizeSprite()
             _gear->ResetRect(x, y, fWidth, fHeight);
         }
     }
+    */
 }
